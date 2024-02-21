@@ -4,7 +4,12 @@ class Book {
   String? bookDetail;
   String? bookWriter;
 
-  Book(this.bookId, this.bookName, this.bookDetail, this.bookWriter);
+  Book(
+    this.bookId,
+    this.bookName,
+    this.bookDetail,
+    this.bookWriter,
+  );
 
   Book.fromJson(Map<dynamic, dynamic> json) {
     bookId = json['book id'];

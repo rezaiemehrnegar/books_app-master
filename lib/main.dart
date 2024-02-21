@@ -3,7 +3,6 @@ import 'package:books_app/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'constants/app_theme.dart';
 
 void main() async {
@@ -14,9 +13,11 @@ void main() async {
 
   // Get themeMode
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
-  runApp(MyApp(
-    themeMode: savedThemeMode,
-  ));
+  runApp(
+    MyApp(
+      themeMode: savedThemeMode,
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -1,3 +1,5 @@
+// ignore_for_file: implementation_imports
+
 import 'package:books_app/core/service/i_database_client.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:mysql_client/src/mysql_client/connection.dart';
@@ -10,11 +12,12 @@ class DatabaseClient implements IDatabaseClient {
   @override
   Future<MySQLConnection> databaseConnect() async {
     final conn = await MySQLConnection.createConnection(
-        host: host,
-        port: int.parse(port),
-        userName: username,
-        password: password,
-        databaseName: 'booksDB');
+      host: host,
+      port: int.parse(port),
+      userName: username,
+      password: password,
+      databaseName: 'booksDB',
+    );
 
     return conn;
   }

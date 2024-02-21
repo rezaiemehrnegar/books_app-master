@@ -24,11 +24,17 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Future<void> getBook() async {
-    var result = await conn.execute("SELECT * FROM booksDB.books;");
+    var result = await conn.execute(
+      "SELECT * FROM booksDB.books;",
+    );
 
     for (var book in result.rows) {
       setState(() {
-        booksList.add(Book.fromJson(book.assoc()));
+        booksList.add(
+          Book.fromJson(
+            book.assoc(),
+          ),
+        );
       });
     }
   }
@@ -42,19 +48,20 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            getBook();
-          },
-        ),
-        body: ListView.builder(
-          itemCount: booksList.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(booksList[index].bookName!),
-              subtitle: Text(booksList[index].bookWriter!),
-            );
-          },
-        ));
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          getBook();
+        },
+      ),
+      body: ListView.builder(
+        itemCount: booksList.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(booksList[index].bookName!),
+            subtitle: Text(booksList[index].bookWriter!),
+          );
+        },
+      ),
+    );
   }
 }
