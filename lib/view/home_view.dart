@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mysql_client/mysql_client.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
