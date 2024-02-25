@@ -57,8 +57,12 @@ class _HomeViewState extends State<HomeView> {
         itemCount: booksList.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(booksList[index].bookName!),
-            subtitle: Text(booksList[index].bookWriter!),
+            title: Text(
+              booksList[index].bookName!,
+            ),
+            subtitle: Text(
+              booksList[index].bookWriter!,
+            ),
           );
         },
       ),
